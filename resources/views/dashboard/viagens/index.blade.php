@@ -15,7 +15,9 @@
     <p>
         Quantidade de Dias: {{ $viagem->quantidade_dias }} <br>
         Data de Entrada: {{ $viagem->data_entrada }} <br>
-        Data de Saída: {{ $viagem->data_saida }}
+        Data de Saída: {{ $viagem->data_saida }} <br>
+        {{-- dado de outra tabela --}}
+        Propriedade: {{ $viagem->propriedade->nome }}
     </p>
     @endforeach
 

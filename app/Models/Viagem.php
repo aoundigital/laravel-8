@@ -15,4 +15,9 @@ class Viagem extends Model
         'data_saida',
         'propriedades_id'
     ];
+
+    public function propriedade()
+    {
+        return $this->hasOne(Propriedade::class, 'id', 'propriedades_id');
+    }
 }
