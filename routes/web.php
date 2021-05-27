@@ -1,17 +1,11 @@
 <?php
 
+use App\Http\Controllers\ViagemController;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+Route::post('viagens', [ViagemController::class, 'store'])->name('viagens.enviar');
+Route::get('viagens/criar', [ViagemController::class, 'create'])->name('viagens.criar');
+Route::get('viagens', [ViagemController::class, 'index'])->name('viagens.index');
 
 Route::get('/', function () {
     return view('welcome');
