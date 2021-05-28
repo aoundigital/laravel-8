@@ -15,9 +15,9 @@ class CreateAvaliacaosTable extends Migration
     {
         Schema::create('avaliacaos', function (Blueprint $table) {
             $table->id();
-            $table->integer('viagems_id');
-            $table->integer('socios_id');
-            $table->integer('propriedades_id');
+            $table->integer('viagems_id'); //chave estrangeira
+            $table->integer('socios_id'); //chave estrangeira
+            $table->integer('propriedades_id'); //chave estrangeira
             $table->timestamps();
         });
     }

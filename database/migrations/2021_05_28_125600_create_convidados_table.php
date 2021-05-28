@@ -16,7 +16,7 @@ class CreateConvidadosTable extends Migration
         Schema::create('convidados', function (Blueprint $table) {
             $table->id();
             $table->string('nome');
-            $table->integer('pernoite_id');
+            $table->integer('pernoite_id'); //chave estrangeira
             $table->timestamps();
         });
     }

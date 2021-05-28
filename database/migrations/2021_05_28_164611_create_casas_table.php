@@ -33,7 +33,7 @@ class CreateCasasTable extends Migration
             $table->integer('ti_internet');
             $table->integer('ti_telefone');
             $table->integer('ti_tv');
-            $table->integer('avaliacoes_id');
+            $table->integer('avaliacoes_id'); //chave estrangeira
             $table->string('ocorrencia_acomodacoes');
             $table->string('ocorrencia_funcionarios');
             $table->string('ocorrencia_equipamentos');

@@ -18,8 +18,8 @@ class CreatePernoitesTable extends Migration
             $table->date('data_entrada');
             $table->date('data_saida');
             $table->integer('numero_pessoas');
-            $table->integer('viagem_id');
-            $table->integer('socios_id');
+            $table->integer('viagem_id'); //chave estrangeira
+            $table->integer('socios_id'); //chave estrangeira
             $table->timestamps();
         });
     }

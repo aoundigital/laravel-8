@@ -16,6 +16,7 @@ class Viagem extends Model
         'propriedades_id'
     ];
 
+    // 'foreign_key', 'local_key'
     public function propriedade()
     {
         return $this->hasOne(Propriedade::class, 'id', 'propriedades_id');
@@ -23,7 +24,21 @@ class Viagem extends Model
 
     public function reembolso()
     {
-      return $this->hasMany(Propriedade::class, 'viagems_id', 'id');
+      return $this->hasMany(Reembolso::class, 'viagems_id', 'id');
+    }
 
+    public function pernoite()
+    {
+      return $this->hasMany(Pernoite::class, 'viagem_id', 'id');
+    }
+
+    public function translado()
+    {
+      return $this->hasMany(Translado::class, 'viagem_id', 'id');
+    }
+
+    public function avaliacao()
+    {
+      return $this->hasMany(Avaliacao::class, 'viagems_id', 'id');
     }
 }

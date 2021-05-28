@@ -16,8 +16,8 @@ class CreateReembolsosTable extends Migration
         Schema::create('reembolsos', function (Blueprint $table) {
             $table->id();
             $table->string('nome_socio');
-            $table->integer('viagems_id');
-            $table->integer('socios_id');
+            $table->integer('viagems_id');//chave estrangeira
+            $table->integer('socios_id');//chave estrangeira
             $table->timestamps();
         });
     }

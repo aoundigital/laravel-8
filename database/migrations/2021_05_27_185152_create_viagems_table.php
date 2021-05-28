@@ -18,7 +18,7 @@ class CreateViagemsTable extends Migration
             $table->integer('quantidade_dias');
             $table->date('data_entrada');
             $table->date('data_saida');
-            $table->integer('propriedades_id');
+            $table->integer('propriedades_id'); //chave estrangeira
             $table->timestamps();
         });
     }

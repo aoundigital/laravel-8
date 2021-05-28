@@ -13,14 +13,36 @@
 
     @foreach ($viagens as $viagem)
     <p>
-        Quantidade de Dias: {{ $viagem->quantidade_dias }} <br>
-        Data de Entrada: {{ $viagem->data_entrada }} <br>
-        Data de Saída: {{ $viagem->data_saida }} <br>
+        Estadia: {{ $viagem->quantidade_dias }} dias<br>
+        Entrada: {{ $viagem->data_entrada }} <br>
         {{-- dado de outra tabela --}}
-        Propriedade: {{ $viagem->propriedade->nome }}
-        {{-- Reembolso: {{ $viagem->reembolso->nome_socio }} --}}
-
-
+        Propriedade: {{ $viagem->propriedade->nome }} <br>
+        {{-- array de reembolsos --}}
+        Reembolso:
+        @foreach ( $viagem->reembolso as $remb )
+            {{ $remb->nome_socio }} /
+        @endforeach
+        <br>
+        {{-- array de pernoites --}}
+        <?php $sum = 0;?>
+        Pernoite: {{$viagem->pernoite->count()}}
+        @foreach ( $viagem->pernoite as $per )
+            <?php $sum += $per['numero_pessoas'] ?>
+        @endforeach
+        @if ($sum != 0)
+            => {{ $sum }} pessoas
+        @endif
+        <br>
+        {{-- array de translados --}}
+        Translado:
+        @if ($viagem->translado->count() != 0)
+            {{$viagem->translado->count()}} =>
+            @foreach ( $viagem->translado as $trans )
+                {{ $trans->prefixo }} |
+            @endforeach
+        @endif
+        <br>
+        Avaliações: {{$viagem->avaliacao->count()}}
     </p>
     @endforeach
 

@@ -18,7 +18,7 @@ class CreateTransladosTable extends Migration
             $table->date('data');
             $table->string('prefixo');
             $table->string('horario');
-            $table->integer('viagem_id');
+            $table->integer('viagem_id');//chave estrangeira
             $table->timestamps();
         });
     }
