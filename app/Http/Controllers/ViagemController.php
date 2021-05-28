@@ -11,7 +11,6 @@ class ViagemController extends Controller
     public function index()
     {
         $viagens = Viagem::with('propriedade')->paginate();
-
         return view('dashboard.viagens.index', [
             'viagens' => $viagens
         ]);

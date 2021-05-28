@@ -20,4 +20,10 @@ class Viagem extends Model
     {
         return $this->hasOne(Propriedade::class, 'id', 'propriedades_id');
     }
+
+    public function reembolso()
+    {
+      return $this->hasMany(Propriedade::class, 'viagems_id', 'id');
+
+    }
 }

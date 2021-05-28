@@ -18,6 +18,9 @@
         Data de Saída: {{ $viagem->data_saida }} <br>
         {{-- dado de outra tabela --}}
         Propriedade: {{ $viagem->propriedade->nome }}
+        {{-- Reembolso: {{ $viagem->reembolso->nome_socio }} --}}
+
+
     </p>
     @endforeach
 
