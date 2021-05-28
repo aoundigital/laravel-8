@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\AvaliacaoController;
+use App\Http\Controllers\BarcoController;
+use App\Http\Controllers\CasaController;
 use App\Http\Controllers\ConvidadoController;
 use App\Http\Controllers\PernoiteController;
 use App\Http\Controllers\PropriedadeController;
@@ -16,6 +18,10 @@ Route::get('viagens/criar', [ViagemController::class, 'create'])->name('viagens.
 Route::get('viagens', [ViagemController::class, 'index'])->name('viagens.index');
 // rota de avaliacoes
 Route::get('avaliacoes', [AvaliacaoController::class, 'index'])->name('avaliacoes.index');
+// rota de casa
+Route::get('casas', [CasaController::class, 'index'])->name('casas.index');
+// rota de barco
+Route::get('barcos', [BarcoController::class, 'index'])->name('barcos.index');
 // rota de propriedades
 Route::get('propriedades', [PropriedadeController::class, 'index'])->name('propriedades.index');
 // rota de sócios
